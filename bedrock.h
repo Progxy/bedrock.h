@@ -46,16 +46,6 @@
 #endif //_BEDROCK_CUSTOM_ALLOCATORS_
 
 /* -------------------------------------------------------------------------------------------------------- */
-// ------------------------
-//  Bedrock Miscs Supports
-// ------------------------
-#ifndef _BEDROCK_USERSPACE_
-#	define print printf	
-#elif defined(_BEDROCK_KERNEL_)
-#	define print printk
-#endif //_BEDROCK_KERNEL_
-
-/* -------------------------------------------------------------------------------------------------------- */
 // ----------------------------------
 //  Bedrock Internal Printing Macros
 // ----------------------------------
@@ -76,6 +66,16 @@
 #else
 #	define BEDROCK_WARNING_LOG WARNING_LOG
 #endif // WARNING_LOG
+
+/* -------------------------------------------------------------------------------------------------------- */
+// ------------------------
+//  Bedrock Miscs Supports
+// ------------------------
+#ifndef _BEDROCK_USERSPACE_
+#	define print printf
+#elif defined(_BEDROCK_KERNEL_)
+#	define print printk
+#endif //_BEDROCK_KERNEL_
 
 #include "./bedrock_miscs.h"
 
